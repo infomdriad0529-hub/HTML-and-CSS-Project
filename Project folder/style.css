@@ -1,0 +1,212 @@
+x
+* { 
+    box-sizing: border-box; 
+    margin: 0; padding: 0; 
+}
+body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background: #f4f6f8; 
+    color: #222; 
+    min-height: 100vh; 
+}
+
+/* Navigation Bar */
+.navbar { 
+    background: #1a237e;
+    border-radius: 10px;
+    color: #fff; 
+    padding: 1rem 2rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+.nav-brand { 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    letter-spacing: 2px; 
+}
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 2rem; 
+}
+.nav-link { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 1rem; 
+    padding: 0.5rem 1rem; 
+    border-radius: 4px; 
+    transition: background 0.2s; 
+}
+.nav-link:hover, .nav-link.active { 
+    background: #3949ab;
+}
+.nav-logo {
+    height: 40px;
+    margin-right: 1rem;
+}
+body {
+    background: url('assets/dashboard-bg.jpg') center center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+#dashboard.page-section {
+    background: transparent;
+    box-shadow: none;
+    padding-bottom: 2rem;
+}
+.page-section {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(30,40,90,0.08);
+    padding-bottom: 2rem;
+}
+/* Main Layout */
+main { 
+    max-width: 1100px; 
+    margin: 2rem auto; 
+    padding: 1rem; 
+}
+.page-section { margin-bottom: 2.5rem; }
+
+/* Dashboard Cards */
+.dashboard-cards { 
+    display: flex; 
+    gap: 2rem; 
+    flex-wrap: wrap; 
+    margin-top: 1.5rem; 
+}
+.card { background: #fbfcfc; 
+    box-shadow: 0 2px 8px #222; 
+    border-radius: 10px; 
+    padding: 2rem 2.5rem; 
+    font-size: 1.2rem; 
+    font-weight: 500; 
+    min-width: 180px; 
+    text-align: center; 
+    transition: transform 0.2s;
+ }
+.card:hover { 
+    transform: translateY(-5px) scale(1.03); 
+    box-shadow: 0 4px 16px rgba(30,40,90,0.12); 
+}
+
+/* Entity Forms */
+.entity-form { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1rem; 
+    margin-bottom: 1.5rem; 
+    background: #fff; 
+    padding: 1rem; 
+    border-radius: 8px; 
+    box-shadow: 0 1px 4px rgba(30,40,90,0.06);
+ }
+.entity-form input, .entity-form select { 
+    padding: 0.6rem 1rem; 
+    border: 1px solid #bdbdbd;
+     border-radius: 5px; 
+     font-size: 1rem; 
+     flex: 1 1 180px; 
+    }
+.entity-form button {
+     background: #1a237e; 
+     color: #fff; 
+     border: none; 
+     padding: 0.7rem 1.5rem; 
+     border-radius: 5px; 
+     font-size: 1rem; 
+     cursor: pointer; 
+     transition: background 0.2s; 
+    }
+.entity-form button:hover { 
+    background: #3949ab; 
+}
+
+/* Tables */
+.entity-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: #fff; 
+    box-shadow: 0 1px 4px rgba(30,40,90,0.06); 
+    border-radius: 8px; 
+    overflow: hidden;
+ }
+.entity-table th, .entity-table td {
+     padding: 0.9rem 1rem; 
+     text-align: left; 
+    }
+.entity-table th { 
+    background: #e8eaf6; 
+    font-weight: 600;
+ }
+.entity-table tr { 
+    border-bottom: 1px solid #e0e0e0; 
+}
+.entity-table tr:last-child {
+     border-bottom: none;
+     }
+.entity-table tbody tr:hover { 
+    background: #f1f3fa;
+ }
+
+/* Action Buttons */
+.action-btn {
+     background: #fff; 
+     color: #1a237e; 
+     border: 1px solid #1a237e; 
+     padding: 0.4rem 1rem; 
+     border-radius: 4px; 
+     font-size: 0.95rem; 
+     margin-right: 0.5rem; 
+     cursor: pointer; 
+     transition: background 0.2s, color 0.2s;
+     }
+.action-btn:hover { 
+    background: #1a237e; 
+    color: #fff; 
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .dashboard-cards { flex-direction: column;
+     gap: 1rem; 
+    }
+  main { padding: 0.5rem; }
+}
+@media (max-width: 600px) {
+  .navbar { flex-direction: column; 
+    align-items: flex-start; 
+    gap: 0.5rem; 
+}
+  .nav-links { gap: 1rem;
+ }
+  .entity-form { 
+    flex-direction: column; 
+    gap: 0.7rem; }
+  .dashboard-cards { flex-direction: column; gap: 0.7rem; }
+  .card { padding: 1.2rem 1rem; font-size: 1rem; }
+  .entity-table th, .entity-table td { padding: 0.6rem 0.5rem; font-size: 0.95rem; }
+}
+/* Error Styles */
+input:invalid, select:invalid { border-color: #e53935; }
+
+/* Hide number input arrows for capacity */
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
+.nav-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+.nav-name {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+.nav-title {
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 2px;
+}

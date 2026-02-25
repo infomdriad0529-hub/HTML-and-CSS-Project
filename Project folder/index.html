@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div style="display:flex;align-items:center;">
+            <img src="assets/logo.png" alt="Logo" class="nav-logo">
+            <div class="nav-title-group" style="margin-left:12px;display:flex;flex-direction:column;align-items:flex-start;">
+                <span class="nav-name">Partho</span>
+                <span class="nav-title">Transport Management System</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+            <li><a href="#vehicles" class="nav-link">Vehicles</a></li>
+            <li><a href="#drivers" class="nav-link">Drivers</a></li>
+            <li><a href="#trips" class="nav-link">Trips</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="dashboard" class="page-section">
+            <h1>Dashboard</h1>
+            <div class="dashboard-cards">
+                <div class="card" id="total-vehicles">Vehicles: 0</div>
+                <div class="card" id="total-drivers">Drivers: 0</div>
+                <div class="card" id="total-trips">Trips: 0</div>
+            </div>
+        </section>
+        <section id="vehicles" class="page-section" style="display:none;">
+            <h1>Vehicles</h1>
+            <form id="vehicle-form" class="entity-form">
+                <input type="hidden" id="vehicle-id">
+                <select id="vehicle-type" required>
+                    <option value="">Type</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Van">Van</option>
+                    <option value="Car">Car</option>
+                    <option value="Bike">Bike</option>
+                </select>
+                <select id="vehicle-capacity" required>
+                    <option value="">Capacity</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="12">12</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                </select>
+                <select id="vehicle-status" required>
+                    <option value="">Status</option>
+                    <option value="Available">Available</option>
+                    <option value="In Use">In Use</option>
+                    <option value="Maintenance">Maintenance</option>
+                </select>
+                <button type="submit" id="vehicle-submit">Add Vehicle</button>
+            </form>
+            <table class="entity-table" id="vehicles-table">
+                <thead>
+                    <tr>
+                        <th>ID</th><th>Type</th><th>Capacity</th><th>Status</th><th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section id="drivers" class="page-section" style="display:none;">
+            <h1>Drivers</h1>
+            <form id="driver-form" class="entity-form">
+                <input type="hidden" id="driver-id">
+                <input type="text" id="driver-name" placeholder="Name" required>
+                <input type="text" id="driver-license" placeholder="License Number" required>
+                <input type="text" id="driver-contact" placeholder="Contact" required>
+                <button type="submit" id="driver-submit">Add Driver</button>
+            </form>
+            <table class="entity-table" id="drivers-table">
+                <thead>
+                    <tr>
+                        <th>ID</th><th>Name</th><th>License Number</th><th>Contact</th><th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section id="trips" class="page-section" style="display:none;">
+            <h1>Trips</h1>
+            <form id="trip-form" class="entity-form">
+                <input type="hidden" id="trip-id">
+                <select id="trip-vehicle" required>
+                    <option value="">Select Vehicle</option>
+                </select>
+                <select id="trip-driver" required>
+                    <option value="">Select Driver</option>
+                </select>
+                <input type="date" id="trip-date" required>
+                <input type="text" id="trip-destination" placeholder="Destination" required>
+                <button type="submit" id="trip-submit">Add Trip</button>
+            </form>
+            <table class="entity-table" id="trips-table">
+                <thead>
+                    <tr>
+                        <th>ID</th><th>Vehicle</th><th>Driver</th><th>Date</th><th>Destination</th><th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
